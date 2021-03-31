@@ -1,0 +1,54 @@
+.btn {
+    width: 215px;
+    height: 52px;
+    border: none;
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 110%;
+    padding: 16px 22px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    &--buy {
+        background-color: $accent-color;
+        margin-right: 40px;
+        @media(max-width: 430px) {
+            margin-right: 0;
+            width: 95%;
+        }
+        &:hover {
+            background-color: darken($accent-color, 10%);
+        }
+    }
+}
+
+.buy-on-click {
+    color: $accent-color;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 110%;
+    cursor: pointer;
+    @media(max-width: 430px) {
+        order: -1;
+        margin-bottom: 35px;
+    }
+    @media(max-width: 408px) {
+        display: none;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+    &--mobile {
+        display: none;
+        @media(max-width: 408px) {
+            display: block;
+            margin-bottom: 0;
+            margin-left: 30px;
+        }
+        @media(max-width: 340px) {
+            margin-left: 20px;
+        }
+    }
+}

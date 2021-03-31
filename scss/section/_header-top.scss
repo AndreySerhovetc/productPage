@@ -1,0 +1,105 @@
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 33px;
+    &-info {
+        @media(max-width: 1110px) {
+            order: 1;
+            width: 100%;
+            text-align: center;
+            padding-top: 30px;
+        }
+        @media(max-width:470px) {
+            display: none;
+        }
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 110%;
+        &__work-hour {
+            margin-right: 20px;
+            color: $text-color-gray;
+        }
+        &__phone-number {
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 16px;
+            color: $text-color-black;
+        }
+        &__call-back {
+            color: $link-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.search {
+    position: relative;
+    @media(max-width: 590px) {
+        order: 1;
+        width: 100%;
+        text-align: center;
+        padding-top: 20px;
+    }
+    &__input {
+        width: 245px;
+        height: 26px;
+        border: none;
+        border-bottom: 1px solid $input-color;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 110%;
+        color: $text-color-gray;
+        padding: 6px 0;
+        outline: none;
+        @media(max-width: 590px) {
+            width: 100%;
+        }
+    }
+    &__button {
+        position: absolute;
+        top: 6px;
+        right: 0;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        @media(max-width: 590px) {
+            top: 26px;
+            right: 10px;
+        }
+    }
+}
+
+.cart {
+    @media(max-width: 1110px) {
+        margin-right: 60px;
+    }
+    @media(max-width: 450px) {
+        margin-right: 50px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+    &__count {
+        margin-left: 10px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 110%;
+        color: $text-color-gray;
+    }
+}
+
+.logo img {
+    @media(max-width: 375px) {
+        width: 173px;
+    }
+}
