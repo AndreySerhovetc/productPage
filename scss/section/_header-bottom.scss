@@ -26,34 +26,13 @@
                 display: block;
             }
         }
-        &__icon {
-            margin-left: 6px;
-        }
-    }
-    
-    .sub-menu {
-        &-list {
-            display: none;
-            position: absolute;
-            top: 20px;
-            left: 0;
-            min-width: 200px;
-            z-index: 9;
-            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
-            transition: 0.3s ease-in-out;
-        }
-        &__item {
-            background-color: #fff;
-            border-bottom: 1px solid $accent-color;
-        }
         &__link {
-            display: inline-block;
-            width: 100%;
-            padding: 15px 5px 15px 5px;
-            transition: 0.3s ease-in-out;
             &:hover {
-                background-color: $line-color;
+                text-decoration: underline;
             }
+        }
+        &__icon {
+            padding: 6px 6px 0 6px;
         }
     }
     
@@ -116,14 +95,14 @@
             left: -100%;
             z-index: 2;
             background-color: #fff;
-            min-width: 100%;
-            height: 640px;
+            width: 100%;
+            height: auto;
             overflow: hidden;
             transition: all 0.3s ease-in-out;
             &.active {
                 top: 0;
                 left: 0;
-                height: 640px;
+                height: auto;
             }
             &__button {
                 display: block;
@@ -182,17 +161,19 @@
             &__list {
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: start;
                 width: 100%;
                 margin: 0;
                 padding-left: 15px;
-                padding-top: 35px;
+                padding-top: 80px;
                 height: auto;
             }
             &__item {
                 display: flex;
-                align-items: center;
+                flex-wrap: wrap;
+                // flex-direction: column;
                 margin-bottom: 15px;
+                position: relative;
                 &-name {
                     font-style: normal;
                     font-weight: 500;
@@ -202,10 +183,69 @@
                     padding-left: 40px;
                 }
             }
-            // &__link {
-            //     position: absolute;
-            //     width: 100%;
-            //     z-index: 2;
-            // }
+            &__link {
+                display: block;
+            }
         }
     }
+    
+    .sub-menu {
+        &-list {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            min-width: 200px;
+            z-index: 9;
+            box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+            transition: 0.3s ease-in-out;
+            @media (max-width: 1110px) {
+                position: relative;
+                left: 0;
+                top: 0;
+                box-shadow: none;
+            }
+        }
+        &__item {
+            background-color: #fff;
+            border-bottom: 1px solid $accent-color;
+        }
+        &__link {
+            display: block;
+            position: relative;
+            width: 100%;
+            padding: 15px 5px 15px 5px;
+            transition: 0.3s ease-in-out;
+            &:hover {
+                background-color: $line-color;
+            }
+        }
+    }
+    
+    .burger-sub-menu {
+        &-list {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            position: relative;
+            top: 0;
+            left: 40px;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+        }
+        &__link {
+            padding: 10px;
+        }
+    }
+    
+    body.touch .burger-sub-menu-list.open {
+        display: flex;
+        opacity: 1;
+        transition: all 0.4s ease-in-out;
+    }
+    
+    // .arrow {
+    //     position: relative;
+    //     top: 0;
+    //     left: 0;
+    // }
